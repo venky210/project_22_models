@@ -60,3 +60,71 @@ def insert_accessrecord(request):
     d={'accessrecord':QLAO}
     return render(request,'display_accessrecord.html',d)
 
+#ORDER DATA
+
+
+def ascending_topic(request):
+    QLTO=Topic.objects.all().order_by('topic_name')
+    d={'topic':QLTO}   
+    return render(request,'display_topic.html',d)
+
+
+def descending_topic(request):
+    QLTO=Topic.objects.all().order_by('-topic_name')
+    d={'topic':QLTO}   
+    return render(request,'display_topic.html',d)
+
+
+def length_topic(request):
+    QLTO=Topic.objects.all().order_by(Length('topic_name'))
+    d={'topic':QLTO}   
+    return render(request,'display_topic.html',d)
+
+def descendinglength_topic(request):
+    QLTO=Topic.objects.all().order_by(Length('topic_name'))
+    d={'topic':QLTO}   
+    return render(request,'display_topic.html',d)
+
+
+def ascending_webpage(request):
+    QLWO=Webpage.objects.all().order_by('name')
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+
+def descending_webpage(request):
+    QLWO=Webpage.objects.all().order_by('-name')
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+def lengthascending_webpage(request):
+    QLWO=Webpage.objects.all().order_by(Length('name'))
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+
+def lengthdescending_webpage(request):
+    QLWO=Webpage.objects.all().order_by(Length('name').desc())
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+  
+
+def ascending_accessrecord(request):
+    QLAO=AccessRecord.objects.all().order_by('name')
+    d={'accessrecord':QLAO}
+    return render(request,'display_accessrecord.html',d)
+
+def descending_accessrecord(request):
+    QLAO=AccessRecord.objects.all().order_by('-name')
+    d={'accessrecord':QLAO}
+    return render(request,'display_accessrecord.html',d)
+
+def lengthascending_accessrecord(request):
+    QLAO=AccessRecord.objects.all().order_by(Length('name'))
+    d={'accessrecord':QLAO}
+    return render(request,'display_accessrecord.html',d)
+
+def lengthdescending_accessrecord(request):
+    QLAO=AccessRecord.objects.all().order_by(Length('name').desc())
+    d={'accessrecord':QLAO}
+    return render(request,'display_accessrecord.html',d)
