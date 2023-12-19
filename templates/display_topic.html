@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;">
+    <center>
+    <table border="6px">
+           <i> <h1 style="background:linear-gradient(45deg,green,yellow,blue)">DISPLAY_TOPICS</h1></i>
+            <tr><th style="color:red;">Topics_Name</th></tr>
+            {% for to in topic %}
+            <tr>
+                <th>{{to.topic_name}}</th>
+            </tr>
+            {% endfor %}
+    </table>
+    </center>
+</body>
+</html>

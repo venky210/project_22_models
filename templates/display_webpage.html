@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;">
+    <center>
+        <table border="6px">
+           <i> <h1 style="background: linear-gradient(45deg,blue,yellow,green);">DISPLAY_WEBPAGES</h1></i>
+            <tr style="color: blueviolet;">
+                <th>Pk_value</th>
+                <th>Topic_Name</th>
+                <th>Name</th>
+                <th>Url</th>
+                <th>Email</th>
+            </tr>
+            {% for wo in webpage %}
+            <tr>
+                <td>{{wo.pk}}</td>
+                <td>{{wo.topic_name}}</td>
+                <td>{{wo.name}}</td>
+                <td>{{wo.url}}</td>
+                <td>{{wo.email}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    
+</body>
+</html>
