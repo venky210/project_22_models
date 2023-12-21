@@ -204,6 +204,23 @@ def fieldlookup_day(request):
     d={'accessrecord':QLAO}
     return render(request,'display_accessrecord.html',d)
 
+#IMPORT Q OBJECTS
+
+def Qobject_and(request):
+    QLWO=Webpage.objects.filter(Q(topic_name='cricket') & Q(name__startswith='v'))
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+def and_operation(request):
+    QLWO=Webpage.objects.filter(topic_name='cricket',name__startswith='d')
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+
+def Qobject_or(request):
+    QLWO=Webpage.objects.filter(Q(topic_name='cricket') | Q(name__startswith='v'))
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
 
 
 

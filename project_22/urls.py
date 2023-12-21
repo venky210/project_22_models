@@ -49,6 +49,9 @@ urlpatterns = [
     path('fieldlookup_year/',fieldlookup_year,name='fieldlookup_year'),
     path('fieldlookup_month/',fieldlookup_month,name='fieldlookup_month'),
     path('fieldlookup_day/',fieldlookup_day,name='fieldlookup_day'),
+    path('Qobject_and/',Qobject_and,name='Qobject_and'),
+    path('and_operation/',and_operation,name='and_operation'),
+    path('Qobject_or/',Qobject_or,name='Qobject_or'),
 ]
     
     
