@@ -37,4 +37,18 @@ urlpatterns = [
     path('descending_accessrecord/',descending_accessrecord,name='descending_accessrecord'),
     path('lengthascending_accessrecord/',lengthascending_accessrecord,name='lengthascending_accessrecord'),
     path('lengthdescending_accessrecord/',lengthdescending_accessrecord,name='lengthdescending_accessrecord'),
+    path('fieldlookup_gt/',fieldlookup_gt,name='fieldlookup_gt'),
+    path('fieldlookup_gte/',fieldlookup_gte,name='fieldlookup_gte'),
+    path('fieldlookup_lt/',fieldlookup_lt,name='fieldlookup_lt'),
+    path('fieldlookup_lte/',fieldlookup_lte,name='fieldlookup_lte'),
+    path('fieldlookup_startswith/',fieldlookup_startswith,name='fieldlookup_startswith'),
+    path('fieldlookup_endswith/',fieldlookup_endswith,name='fieldlookup_endswith'),
+    path('fieldlookup_contains/',fieldlookup_contains,name='fieldlookup_contains'),
+    path('fieldlookup_in/',fieldlookup_in,name='fieldlookup_in'),
+    path('fieldlookup_regex/',fieldlookup_regex,name='fieldlookup_regex'),
+    path('fieldlookup_year/',fieldlookup_year,name='fieldlookup_year'),
+    path('fieldlookup_month/',fieldlookup_month,name='fieldlookup_month'),
+    path('fieldlookup_day/',fieldlookup_day,name='fieldlookup_day'),
 ]
+    
+    

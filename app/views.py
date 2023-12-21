@@ -5,6 +5,7 @@ from django.shortcuts import render
 from app.models import *
 from django.http import HttpResponse
 from django.db.models.functions import Length
+from django.db.models import Q
 
 #DISPLAY THE DATA
 
@@ -128,3 +129,83 @@ def lengthdescending_accessrecord(request):
     QLAO=AccessRecord.objects.all().order_by(Length('name').desc())
     d={'accessrecord':QLAO}
     return render(request,'display_accessrecord.html',d)
+
+
+#FILEDLOOKUPS
+
+def fieldlookup_gt(request):
+    QLWO=Webpage.objects.filter(pk__gt=3)
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+def fieldlookup_gte(request):
+    QLWO=Webpage.objects.filter(pk__gte=3)
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+def fieldlookup_lt(request):
+    QLWO=Webpage.objects.filter(pk__lt=3)
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+
+def fieldlookup_lt(request):
+    QLWO=Webpage.objects.filter(pk__lt=3)
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+
+def fieldlookup_lte(request):
+    QLWO=Webpage.objects.filter(pk__lte=3)
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+
+def fieldlookup_startswith(request):
+    QLWO=Webpage.objects.filter(name__startswith='r')
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+
+def fieldlookup_endswith(request):
+    QLWO=Webpage.objects.filter(name__endswith='t')
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+
+def fieldlookup_contains(request):
+    QLWO=Webpage.objects.filter(name__contains='r')
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+def fieldlookup_in(request):
+    QLWO=Webpage.objects.filter(name__in=('virat','dhoni','roith'))
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+
+def fieldlookup_regex(request):
+    QLWO=Webpage.objects.filter(name__regex='\w+h$')
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+
+def fieldlookup_year(request):
+    QLAO=AccessRecord.objects.filter(date__year='2006')
+    d={'accessrecord':QLAO}
+    return render(request,'display_accessrecord.html',d)
+
+def fieldlookup_month(request):
+    QLAO=AccessRecord.objects.filter(date__month='06')
+    d={'accessrecord':QLAO}
+    return render(request,'display_accessrecord.html',d)
+
+def fieldlookup_day(request):
+    QLAO=AccessRecord.objects.filter(date__day='16')
+    d={'accessrecord':QLAO}
+    return render(request,'display_accessrecord.html',d)
+
+
+
+
+
+
