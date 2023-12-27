@@ -10,7 +10,7 @@ class Topic(models.Model):
 class Webpage(models.Model):
     topic_name=models.ForeignKey(Topic,on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
-    url=models.URLField()
+    url=models.URLField(default='http://url.com')
     email=models.EmailField(default='india@gmail.com')
     def __str__(self):
         return self.name

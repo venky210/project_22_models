@@ -41,6 +41,7 @@ def insert_webpage(request):
     n=input('enter name: ')
     u=input('enter url: ')
     e=input('enter email: ')
+    da=input('enter date')
     TO=Topic.objects.get(topic_name=tn)
     NWO=Webpage.objects.get_or_create(topic_name=TO,name=n,url=u,email=e)[0]
     NWO.save()
@@ -82,7 +83,7 @@ def length_topic(request):
     return render(request,'display_topic.html',d)
 
 def descendinglength_topic(request):
-    QLTO=Topic.objects.all().order_by(Length('topic_name'))
+    QLTO=Topic.objects.all().order_by(Length('topic_name').desc())
     d={'topic':QLTO}   
     return render(request,'display_topic.html',d)
 
@@ -221,6 +222,24 @@ def Qobject_or(request):
     QLWO=Webpage.objects.filter(Q(topic_name='cricket') | Q(name__startswith='v'))
     d={'webpage':QLWO}
     return render(request,'display_webpage.html',d)
+
+
+
+#update
+
+def update_webpage(request):
+    #Webpage,object.filter(url__contains='venkatesh').update(name='venkatesh')
+    #Webpage,object.filter(topic_name='cricket').update(name='virat')
+    #Webpage.objects.filter(url__contains='venkatesh').update(topic_name='football')
+    #VO=Topic.objects.get_or_create(topic_name='volleyball')[0]
+    #VO.save()
+    #Webpage.objects.update_or_create(name='venkat',defaults={'topic_name':VO})
+    #Webpage.objects.update_or_create(topic_name= 'volleyball',defaults={'name':'venkat'})
+   
+    QLWO=Webpage.objects.all()
+    d={'webpage':QLWO}
+    return render(request,'display_webpage.html',d)
+    
 
 
 

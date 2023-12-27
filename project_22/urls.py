@@ -52,6 +52,7 @@ urlpatterns = [
     path('Qobject_and/',Qobject_and,name='Qobject_and'),
     path('and_operation/',and_operation,name='and_operation'),
     path('Qobject_or/',Qobject_or,name='Qobject_or'),
+    path('update_webpage/',update_webpage,name='update_webpage'),
 ]
     
     
